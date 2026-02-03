@@ -8,7 +8,9 @@ const router = express.Router();
 const CONTRACT_ADDRESS = process.env.BERRY_CONTRACT_ADDRESS; // set in Railway
 const RPC_URL = process.env.RPC_URL;                         // Base RPC
 const OWNER_PRIVATE_KEY = process.env.OWNER_PK;              // your key
-const abi = JSON.parse(fs.readFileSync('../../contracts/out/BoundlessBerriesABI.json'));
+const ABI = JSON.parse(
+  fs.readFileSync(new URL("../../../contracts/out/BoundlessBerriesABI.json", import.meta.url))
+).abi;
 
 // placeholder pin function
 async function pinToIPFS(updatedMetadata) {
