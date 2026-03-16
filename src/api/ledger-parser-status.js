@@ -1,6 +1,7 @@
 // src/api/ledger-parser-status.js
 
-import { runLedgerParserHeartbeat } from '../../subsystems/ledger-parser/heartbeat.js';
+// CORRECT
+import { runLedgerParserHeartbeat } from '../subsystems/ledger-parser/heartbeat.js';
 
 export default async function handler(req, res) {
   try {
